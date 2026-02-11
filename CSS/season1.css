@@ -1,0 +1,251 @@
+:root {
+    --primary-color: #e91e63; /* Branding Pink */
+    --bg-dark: #0f0f0f;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: #fff;
+    padding-bottom: 80px;
+}
+
+/* Header */
+.panel-header {
+    text-align: center;
+    padding: 100px 40px 60px;
+
+}
+
+.panel-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 20px;
+}
+
+.panel-header span { color: var(--primary-color); }
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Container & Grids */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tier-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+    justify-items: center;
+}
+
+/* Member Card Styling */
+.member-card {
+    background: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.4s ease;
+    width: 100%;
+    max-width: 260px;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.15);
+}
+
+/* Image Box & Social Overlay */
+.img-box {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    border-radius: 15px; /* Square with rounded corners */
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--primary-color);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.social-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(233, 30, 99, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.member-card:hover .social-overlay { opacity: 1; }
+
+.social-overlay a {
+    color: #fff;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-overlay a:hover { transform: scale(1.2); }
+
+/* Text Content */
+.member-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.designation {
+    font-size: 13px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+    min-height: 40px; /* Aligns text if designation is long */
+}
+
+.batch {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .panel-header h1 { font-size: 2rem; }
+    .tier-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+}
+
+@media (max-width: 480px) {
+    .tier-grid { grid-template-columns: 1fr; }
+}
+
+/* Navigation Wrapper */
+.navigation-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    background: transparent;
+}
+
+.nav-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Buttons er pashapashi gap */
+}
+
+/* Back to Panels Button (Secondary) */
+.btn-back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-color);
+    color: white; /* Deep purple/blue vibe from reference */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 35px;
+    border-radius: 50px; /* Pill shape design */
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.3); /* Subtle glow effect */
+    transition: 0.3s ease;
+}
+
+.btn-back i {
+    font-size: 12px;
+}
+
+.btn-back:hover {
+    opacity: 0.7;
+    transform: translateX(-5px);
+}
+
+/* Go to Season 2 Button (Primary) */
+.btn-next {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ff4081; /* Primary Pink color */
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 50px; /* Pill shape design */
+    font-weight: 500;
+    font-size: 15px;
+    box-shadow: 0 0 25px rgba(255, 64, 129, 0.4); /* Glow effect */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-next i {
+    font-size: 14px;
+}
+
+.btn-next:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 35px rgba(255, 64, 129, 0.6);
+    background: #e91e63;
+}
+
+/* Member Card Image Style Fix */
+.img-box {
+    width: 160px;
+    height: 180px; /* Rectangular portrait style from reference */
+    margin: 0 auto 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .nav-btn-group {
+        flex-direction: column-reverse; /* Mobile e Go to Season upore thakbe */
+        gap: 20px;
+    }
+    
+    .btn-next {
+        width: 100%;
+        justify-content: center;
+    }
+}

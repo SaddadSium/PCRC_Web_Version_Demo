@@ -1,0 +1,163 @@
+:root {
+    --primary: #e91e63; /* Branding Pink */
+    --bg-dark: #080808;
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+}
+/* --- Centered Header Styling --- */
+.comp-header-centered {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-title span {
+    color: var(--primary);
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+/* --- Pill Shaped Back Button --- */
+.nav-wrapper-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.btn-back-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--primary); 
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 50px; /* Pill Shape */
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+.btn-back-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
+    background: #ff4081;
+}
+
+.btn-back-pill i {
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-back-pill:hover i {
+    transform: translateX(-5px);
+}
+
+/* --- Season Card Styling (Center Aligned) --- */
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Card width onujayi grid thik kora holo */
+    gap: 15px;
+    justify-content: center; /* Grid-ke majhkane rakhar jonno */
+    padding: 20px;
+}
+
+.season-card {
+    height: 350px; /* Fixed height */
+    width: 550px;  /* Fixed width */
+    background: rgba(255, 255, 255, 0.05); /* Modern Glass background */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 40px; 
+    position: relative;
+    transition: all 0.4s ease;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Premium blur effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Content-ke verticaly center korbe */
+    align-items: center;    /* Content-ke horizontaly center korbe */
+    margin: 0 auto;   
+    margin-bottom: 20px;
+
+/* Hover korle pink glow thakbe jeta apnar branding er sathe milbe */
+.season-card:hover {
+    transform: translateY(-10px);
+    border-color: #e91e63;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+}
+
+/* Mobile responsive korar jonno width auto kora dorkar */
+@media (max-width: 600px) {
+    .season-card {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+    }
+}
+
+.active-card {
+    border-color: var(--primary);
+    box-shadow: 0 0 25px rgba(233, 30, 99, 0.2); /* Neon Glow */
+}
+
+.card-tag {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contest-name {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.winner-list {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+}
+
+.winner-list p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.winner-list strong {
+    color: var(--primary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .season-card { width: 100%; height: auto; }
+}

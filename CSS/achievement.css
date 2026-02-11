@@ -1,0 +1,103 @@
+:root {
+    --primary: #e91e63;
+    --bg-dark: #080808;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-white: #ffffff;
+    --text-gray: #bbbbbb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.achieve-hero {
+    padding: 180px 20px 80px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x600');
+    background-size: cover;
+}
+
+.achieve-hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.achieve-hero h1 span { color: var(--primary); }
+.achieve-hero p { max-width: 800px; margin: 0 auto; color: var(--text-gray); font-style: italic; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 60px 0 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: ''; width: 60px; height: 3px; background: var(--primary);
+    position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+}
+
+/* Achieve Grid Cards */
+.achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.achieve-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+    position: relative;
+}
+
+.achieve-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+}
+
+.achieve-card img { width: 100%; height: 450px; object-fit: cover; }
+
+.badge {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--primary); color: #fff;
+    padding: 5px 15px; border-radius: 30px; font-weight: 600; font-size: 14px;
+}
+
+.card-body { padding: 30px; }
+.card-body h3 { margin-bottom: 15px; color: var(--primary); }
+.card-body p { color: var(--text-gray); font-size: 14px; margin-bottom: 15px; }
+
+/* Social Event Row */
+.event-row { display: flex; flex-direction: column; gap: 30px; }
+.event-card {
+    display: flex; background: var(--card-bg); border-radius: 20px;
+    overflow: hidden; align-items: center; border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 40px;
+}
+
+.event-card img { width: 40%; height: 300px; object-fit: cover; }
+.event-text { padding: 40px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 16px;
+color: var(--text-gray);
+ }
+.event-text h3 { margin-bottom: 15px; color: var(--primary); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .achieve-hero h1 { font-size: 2.5rem; }
+    .event-card { flex-direction: column; }
+    .event-card img { width: 100%; height: 250px; }
+}

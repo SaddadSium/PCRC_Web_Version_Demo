@@ -1,0 +1,91 @@
+:root {
+    --primary: #e91e63;
+    --bg-dark: #080808;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Common Section Styles */
+.panel-section { max-width: 1200px; margin: 0 auto; padding: 120px 20px 60px; text-align: center; }
+.bg-alt { background: rgba(255, 255, 255, 0.02); max-width: 100%; padding-top: 60px; }
+.section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+.section-title span { color: var(--primary); }
+.underline { width: 60px; height: 4px; background: var(--primary); margin: 0 auto 50px; border-radius: 2px; }
+
+/* Member Cards Grid */
+.member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.founder-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 0.4fr)); justify-content: center; }
+
+.member-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+}
+
+.member-card.highlight { border-color: var(--primary); background: rgba(233, 30, 99, 0.03); }
+
+/* Member Image Style */
+.img-box {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    background: #222;
+}
+
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.member-card h3 { font-size: 17px; margin-bottom: 8px; color: var(--primary); font-weight: 600; }
+.member-card p { font-size: 13px; color: #aaa; }
+.member-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(233, 30, 99, 0.15); }
+
+/* Season Cards (Dynamic Backgrounds) */
+.season-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+.season-card {
+    height: 220px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.5s;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Photos for Season Cards */
+.s1 { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('season1_bg.jpg'); }
+.s2 { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('season2_bg.jpg'); }
+.s3 { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('season3_bg.jpg'); }
+.s4 { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('season4_bg.jpg'); }
+
+.season-card h3 { font-size: 20px; z-index: 2; transition: 0.3s; }
+.season-card span { font-size: 12px; background: var(--primary); padding: 5px 15px; border-radius: 20px; margin-top: 15px; z-index: 2; opacity: 0; transform: translateY(10px); transition: 0.3s; }
+
+.season-card:hover { transform: scale(1.03); border-color: var(--primary); }
+.season-card:hover h3 { transform: translateY(-5px); }
+.season-card:hover span { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+    .nav-menu { background: rgba(10, 10, 10, 0.95); }
+}
